@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DODGE</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="./Components/InfiniteRoadGenrator.js"></script>
+    </head>
+    <body>
+        
+        <a-scene background="color:white" physics>
+            <a-entity 
+                id = "player-camera"
+                player-controls 
+                camera 
+                look-controls
+                position = "-1.2 8 0"
+                static-body
+            >
+            </a-entity>
+            <a-entity
+                id="track"
+                gltf-model="#obst6"
+                position="0 1 -100"
+                scale="0.3 0.3 0.3"
+                animation="property: position; to: 0 0 1000;easing:linear; loop: true; dur: 15000"
+                infinite
+                static-body
+               
+          >
+          </a-entity>
+          <a-box id = "resetBox" position = "-1.2 1 1" color = "red"></a-box>
+            <a-assets>
+                <a-asset-item id = "obst1" src = "./assets/models/Barricade/Barricade.glb"></a-asset-item>
+                <a-asset-item id = "obst2" src = "./assets/models/Bird/Terrifying birdie.glb"></a-asset-item>
+                <a-asset-item id = "obst3" src = "./assets/models/Coin/Coin.glb"></a-asset-item>
+                <a-asset-item id = "obst4" src = "./assets/models/Lamp post/Lamp post.glb"></a-asset-item>
+                <a-asset-item id = "obst5" src = "./assets/models/Obstacle/Obstacle.glb"></a-asset-item>
+                <a-asset-item id = "obst6" src = "./assets/models/Tracks/tracks.glb"></a-asset-item>
+            </a-assets>
+
+        </a-scene>
+    </body>
+</html>
